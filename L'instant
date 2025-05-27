@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffret Tisanes Bien-Être</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f9f4;
+      color: #2e2e2e;
+    }
+    header {
+      background-color: #2e7d32;
+      color: gold;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    .cta {
+      background-color: gold;
+      color: #2e7d32;
+      padding: 1rem 2rem;
+      font-size: 1.25rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+    .cta:hover {
+      background-color: #f1c40f;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Partageons un moment agréable ensemble</h1>
+  </header>
+
+  <div class="container">
+    <h2>Un coffret de tisanes modulable au fil des saisons</h2>
+    <p>
+      Découvrez notre coffret bien-être, pensé pour vous accompagner tout au long de l'année. En fonction des saisons, notre sélection évolue :
+      digestion, sommeil, tonus ou détente… Il y a toujours une tisane adaptée à vos besoins.
+    </p>
+    <p>
+      Notre marque s’engage pour l’environnement et votre santé. Nos produits sont certifiés bio, respectueux de votre organisme et de la nature.
+      Avec transparence et confiance, nous vous offrons des moments de douceur et de convivialité.
+    </p>
+    <p>
+      Ce coffret est idéal pour les personnes de 50 ans et plus, soucieuses de leur équilibre quotidien. Saviez-vous que 72 % des Français
+      pensent que les infusions participent à leur bien-être ?
+    </p>
+
+    <!-- LIEN VERS LE CATALOGUE OU UNE PAGE E-COMMERCE -->
+    <a href="https://tonlien.com" class="cta" target="_blank">Découvrir notre coffret</a>
+  </div>
+
+  <footer>
+    © 2025 — Marque engagée pour votre bien-être
+  </footer>
+</body>
+</html>
