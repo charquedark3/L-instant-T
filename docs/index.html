@@ -1,81 +1,384 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coffret Tisanes Bien-Être</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f9f4;
-      color: #2e2e2e;
-    }
-    header {
-      background-color: #2e7d32;
-      color: gold;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-    .container {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-    }
-    .cta {
-      background-color: gold;
-      color: #2e7d32;
-      padding: 1rem 2rem;
-      font-size: 1.25rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 2rem;
-    }
-    .cta:hover {
-      background-color: #f1c40f;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'instant T - Coffrets de Tisanes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vert: #6b8e23;
+            --vert-fonce: #355e17;
+            --dore: #d4af37;
+            --kraft: #e8e1cf;
+            --blanc: #fff;
+            --gris: #f9f9f7;
+            --ombre: rgba(0,0,0,0.05);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: var(--gris);
+            color: #222;
+        }
+        header {
+            background: linear-gradient(90deg, var(--vert), var(--dore));
+            color: var(--blanc);
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.3rem;
+            margin-top: .5rem;
+            font-style: italic;
+        }
+        nav {
+            background: var(--blanc);
+            box-shadow: 0 2px 8px var(--ombre);
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: relative;
+        }
+        .menu>li {
+            position: relative;
+        }
+        .menu>li>a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--vert-fonce);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background .2s, color .2s;
+        }
+        .menu>li:hover>a,
+        .menu>li>a:focus {
+            background: var(--dore);
+            color: var(--blanc);
+        }
+        /* Sous-menu */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: var(--blanc);
+            min-width: 200px;
+            box-shadow: 0 4px 16px var(--ombre);
+            z-index: 10;
+        }
+        .menu>li:hover .submenu,
+        .menu>li:focus-within .submenu {
+            display: block;
+        }
+        .submenu li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--vert-fonce);
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+        .submenu li a:hover,
+        .submenu li a:focus {
+            background: var(--vert);
+            color: var(--blanc);
+        }
+        /* Section principale */
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            background: var(--blanc);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px var(--ombre);
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: none;}
+        }
+        h2 {
+            color: var(--vert);
+            border-left: 6px solid var(--dore);
+            padding-left: 1rem;
+            margin-top: 0;
+        }
+        h3 {
+            color: var(--dore);
+            margin-bottom: .5rem;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        .price {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--dore);
+            margin: 1rem 0 0 0;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--vert);
+            color: var(--blanc);
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background .2s;
+        }
+        .btn:hover { background: var(--vert-fonce);}
+        /* Coffret visuel */
+        .coffret-visuel {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        .coffret-img {
+            flex: 1 1 260px;
+            min-width: 220px;
+            max-width: 320px;
+            background: linear-gradient(135deg, var(--dore) 60%, var(--vert) 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 18px var(--ombre);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .coffret-img img {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px var(--ombre);
+        }
+        .coffret-desc {
+            flex: 2 1 340px;
+        }
+        /* Footer */
+        footer {
+            background: var(--vert-fonce);
+            color: var(--blanc);
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-size: 0.95rem;
+            margin-top: 2rem;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .coffret-visuel { flex-direction: column; }
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            main { padding: 0 .5rem;}
+            section { padding: 1rem;}
+            .menu>li>a { padding: 1rem 1rem;}
+        }
+        /* Menu burger mobile */
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            top: 1.3rem;
+            right: 1.2rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--blanc);
+            cursor: pointer;
+            z-index: 20;
+        }
+        @media (max-width: 800px) {
+            .menu {
+                flex-direction: column;
+                background: var(--blanc);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                display: none;
+            }
+            .menu.open { display: flex;}
+            .menu>li { width: 100%;}
+            .menu>li>a { padding: 1rem;}
+            .menu-toggle { display: block;}
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>L'instant T </h1>
-  </header>
+    <header>
+        <h1>L’instant T</h1>
+        <p>Le coffret de tisanes qui s’adapte à chaque saison</p>
+        <button class="menu-toggle" aria-label="Ouvrir le menu">&#9776;</button>
+        <nav>
+            <ul class="menu" id="mainMenu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li>
+                    <a href="#coffret">Le Coffret</a>
+                    <ul class="submenu">
+                        <li><a href="#vertus">Vertus par saison</a></li>
+                        <li><a href="#composition">Composition</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#engagements">Nos Engagements</a>
+                    <ul class="submenu">
+                        <li><a href="#environnement">Environnement</a></li>
+                        <li><a href="#confiance">Transparence</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#bienfaits">Bénéfices</a>
+                    <ul class="submenu">
+                        <li><a href="#sante">Santé</a></li>
+                        <li><a href="#praticite">Praticité</a></li>
+                        <li><a href="#accessibilite">Accessibilité</a></li>
+                    </ul>
+                </li>
+                <li><a href="#points-vente">Points de vente</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="container">
-    <h2>Un coffret de tisanes modulable au fil des saisons</h2>
-    <p>
-      Découvrez notre coffret bien-être, pensé pour vous accompagner tout au long de l'année. En fonction des saisons, notre sélection évolue :
-      digestion, sommeil, tonus ou détente… Il y a toujours une tisane adaptée à vos besoins.
-    </p>
-    <p>
-      Notre marque s’engage pour l’environnement et votre santé. Nos produits sont certifiés bio, respectueux de votre organisme et de la nature.
-      Avec transparence et confiance, nous vous offrons des moments de douceur et de convivialité.
-    </p>
-    <p>
-      Ce coffret est idéal pour les personnes de 50 ans et plus, soucieuses de leur équilibre quotidien. Saviez-vous que 72 % des Français
-      pensent que les infusions participent à leur bien-être ?
-    </p>
+    <main>
+        <section id="accueil">
+            <div class="coffret-visuel">
+                <div class="coffret-img">
+                    <!-- Remplacez l'image par une photo de coffret réel si disponible -->
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Coffret L'instant T">
+                </div>
+                <div class="coffret-desc">
+                    <h2>Le coffret signature</h2>
+                    <p>
+                        Découvrez notre coffret rigide de 30 cases, fabriqué en kraft, aux couleurs élégantes doré et vert. À l’intérieur, 30 tisanes soigneusement sélectionnées, emballées dans des sachets en cellulose, pour accompagner chaque saison de l’année.
+                    </p>
+                    <p class="price">Prix : 39,85 €</p>
+                    <a href="#contact" class="btn">Je veux mon coffret</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- LIEN VERS LE CATALOGUE OU UNE PAGE E-COMMERCE -->
-    <a href="https://tonlien.com" class="cta" target="_blank">Découvrir notre coffret</a>
-  </div>
+        <section id="coffret">
+            <h2>Un coffret, 4 saisons, 4 vertus</h2>
+            <ul>
+                <li><strong>Hiver :</strong> Réchauffe, apaise les bronches, réduit le stress.</li>
+                <li><strong>Printemps :</strong> Détoxifie, relance la digestion.</li>
+                <li><strong>Été :</strong> Rafraîchit, hydrate, favorise le sommeil.</li>
+                <li><strong>Automne :</strong> Renforce l’immunité, soulage les articulations, soutient le moral.</li>
+            </ul>
+            <p><strong>Pratique :</strong> À emporter partout, pour une pause bien-être où que vous soyez.</p>
+        </section>
 
-  <footer>
-    © 2025 — Marque engagée pour votre bien-être
-  </footer>
+        <section id="composition">
+            <h2>Composition & Fabrication</h2>
+            <ul>
+                <li>Coffret rigide en kraft, 30 cases</li>
+                <li>Deux couleurs principales : doré et vert</li>
+                <li>30 tisanes en sachets de cellulose, 4 vertus différentes</li>
+                <li>Adapté à chaque saison (offre saisonnière)</li>
+            </ul>
+        </section>
+
+        <section id="engagements">
+            <h2>Nos engagements</h2>
+            <div id="environnement">
+                <h3>🌱 Pour l’environnement</h3>
+                <p>
+                    Chez L’instant T, nous croyons qu’il est possible de prendre soin de soi tout en préservant la planète. Nos coffrets sont conçus dans des matériaux responsables, et nos tisanes sont élaborées dans le respect de la nature.
+                </p>
+            </div>
+            <div id="confiance">
+                <h3>🤝 Transparence & Confiance</h3>
+                <p>
+                    Nous sommes transparents sur la composition de nos produits et nos méthodes de fabrication. Notre priorité : instaurer une relation de confiance durable avec nos clients.
+                </p>
+            </div>
+        </section>
+
+        <section id="bienfaits">
+            <h2>Pourquoi choisir L’instant T ?</h2>
+            <div id="sante">
+                <h3>Bien-être & Santé</h3>
+                <p>
+                    67% des consommateurs mondiaux placent la santé au cœur de leurs choix (Nielsen, 2023). Nos tisanes répondent à cette attente avec des vertus reconnues.
+                </p>
+            </div>
+            <div id="praticite">
+                <h3>Praticité</h3>
+                <p>
+                    54% des Européens privilégient les produits faciles à préparer, et 61% estiment que la praticité réduit le stress (Statista, 2024 ; Ipsos, 2023).
+                </p>
+            </div>
+            <div id="accessibilite">
+                <h3>Accessibilité & Bio</h3>
+                <p>
+                    Nos coffrets sont disponibles dans plusieurs départements (Indre, Dordogne, Cantal, Creuse, Lot) et bientôt partout en France. La démocratisation du bio a augmenté la consommation de 20% en France entre 2021 et 2024 (Agence Bio, 2024).
+                </p>
+            </div>
+        </section>
+
+        <section id="points-vente">
+            <h2>Où nous trouver ?</h2>
+            <ul>
+                <li>Indre</li>
+                <li>Dordogne</li>
+                <li>Cantal</li>
+                <li>Creuse</li>
+                <li>Lot</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <p>Une question ? Une envie de découvrir notre coffret ?</p>
+            <form action="mailto:contact@linstantt.fr" method="post" enctype="text/plain">
+                <label for="nom">Nom :</label><br>
+                <input type="text" id="nom" name="nom" required style="width: 100%;padding:8px;border-radius:5px;border:1px solid #ccc;margin-bottom:1rem;"><br>
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%;padding:8px;border-radius:5px;border:1px solid #ccc;margin-bottom:1rem;"><br>
+                <label for="message">Message :</label><br>
+                <textarea id="message" name="message" rows="4" required style="width: 100%;padding:8px;border-radius:5px;border:1px solid #ccc;margin-bottom:1rem;"></textarea><br>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 L’instant T - Tous droits réservés
+    </footer>
+
+    <script>
+        // Menu burger mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.getElementById('mainMenu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+        // Fermer le menu après clic sur un lien (mobile)
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth < 800) menu.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>
+
