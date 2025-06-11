@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Havas Voyage - Agence de voyage sur-mesure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agence de voyage sur-mesure : destinations, offres, conseils, blog, réservation et équipe d’experts.">
+  <link rel="stylesheet" href="styles.css"> <!-- Ajoute ton fichier CSS ici -->
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#offres">Offres</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#equipe">L'équipe</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="accueil">
+      <h1>Havas Voyage</h1>
+      <p>Voyagez selon vos envies, notre équipe s’occupe de tout !</p>
+      <img src="hero.jpg" alt="Voyageur sur une plage paradisiaque" style="width:100%;max-width:900px;">
+    </div>
+  </header>
+
+  <!-- RECHERCHE AVANCEE -->
+  <section id="recherche">
+    <h2>Recherchez votre séjour</h2>
+    <form>
+      <label>Destination <input type="text" name="destination" placeholder="Ex : Bali, Canada, Maroc"></label>
+      <label>Date de départ <input type="date" name="date_depart"></label>
+      <label>Date de retour <input type="date" name="date_retour"></label>
+      <label>Type de séjour
+        <select name="type_sejour">
+          <option>Plage</option>
+          <option>Aventure</option>
+          <option>Culturel</option>
+          <option>Famille</option>
+        </select>
+      </label>
+      <label>Budget <input type="number" name="budget" placeholder="€"></label>
+      <button type="submit">Rechercher</button>
+    </form>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section id="destinations">
+    <h2>Nos destinations phares</h2>
+    <div class="destinations-grid">
+      <article>
+        <img src="bali.jpg" alt="Bali">
+        <h3>Bali</h3>
+        <p>Île des Dieux, plages, rizières, temples et bien-être.</p>
+        <a href="#offre-bali">Voir les offres</a>
+      </article>
+      <article>
+        <img src="canada.jpg" alt="Canada">
+        <h3>Canada</h3>
+        <p>Nature sauvage, lacs, montagnes et villes dynamiques.</p>
+        <a href="#offre-canada">Voir les offres</a>
+      </article>
+      <article>
+        <img src="maroc.jpg" alt="Maroc">
+        <h3>Maroc</h3>
+        <p>Déserts, médinas, montagnes et hospitalité légendaire.</p>
+        <a href="#offre-maroc">Voir les offres</a>
+      </article>
+      <!-- Ajoute d'autres destinations -->
+    </div>
+  </section>
+
+  <!-- CATALOGUE D'OFFRES -->
+  <section id="offres">
+    <h2>Nos offres du moment</h2>
+    <div class="offres-list">
+      <article id="offre-bali">
+        <h3>Séjour luxe à Bali</h3>
+        <img src="bali-offre.jpg" alt="Séjour Bali">
+        <ul>
+          <li>10 jours / 8 nuits</li>
+          <li>Hôtel 5★, spa, excursions incluses</li>
+          <li>À partir de 1 700 €</li>
+        </ul>
+        <button>Demander un devis</button>
+      </article>
+      <article id="offre-canada">
+        <h3>Roadtrip Canada</h3>
+        <img src="canada-offre.jpg" alt="Roadtrip Canada">
+        <ul>
+          <li>14 jours / 12 nuits</li>
+          <li>Location voiture, hôtels, activités nature</li>
+          <li>À partir de 2 200 €</li>
+        </ul>
+        <button>Demander un devis</button>
+      </article>
+      <article id="offre-maroc">
+        <h3>Découverte du Maroc</h3>
+        <img src="maroc-offre.jpg" alt="Découverte Maroc">
+        <ul>
+          <li>8 jours / 7 nuits</li>
+          <li>Riad, visites guidées, désert</li>
+          <li>À partir de 1 100 €</li>
+        </ul>
+        <button>Demander un devis</button>
+      </article>
+      <!-- Ajoute d'autres offres -->
+    </div>
+  </section>
+
+  <!-- GALERIE PHOTOS -->
+  <section id="galerie">
+    <h2>Galerie photos</h2>
+    <div class="galerie-grid">
+      <img src="galerie1.jpg" alt="Voyage 1">
+      <img src="galerie2.jpg" alt="Voyage 2">
+      <img src="galerie3.jpg" alt="Voyage 3">
+      <!-- Ajoute plus d’images -->
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES CLIENTS -->
+  <section id="temoignages">
+    <h2>Ils témoignent</h2>
+    <blockquote>
+      “Un voyage inoubliable, parfaitement organisé !” – Sophie, Bali 2024
+    </blockquote>
+    <blockquote>
+      “Merci à l’équipe pour leur écoute et leurs conseils !” – Marc, Canada 2023
+    </blockquote>
+    <!-- Ajoute d’autres témoignages -->
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog">
+    <h2>Inspirations & Conseils</h2>
+    <article>
+      <h3>Top 5 des plages secrètes en Europe</h3>
+      <p>Découvrez nos coups de cœur pour un été loin de la foule.</p>
+      <a href="#">Lire l’article</a>
+    </article>
+    <article>
+      <h3>Check-list pour un roadtrip réussi</h3>
+      <p>Nos astuces pour préparer votre aventure en toute sérénité.</p>
+      <a href="#">Lire l’article</a>
+    </article>
+    <!-- Ajoute d’autres articles -->
+  </section>
+
+  <!-- EQUIPE -->
+  <section id="equipe">
+    <h2>Notre équipe</h2>
+    <div class="equipe-grid">
+      <figure>
+        <img src="agent1.jpg" alt="Marie, conseillère">
+        <figcaption>Marie – Conseillère voyages</figcaption>
+      </figure>
+      <figure>
+        <img src="agent2.jpg" alt="Paul, expert destinations">
+        <figcaption>Paul – Expert destinations</figcaption>
+      </figure>
+      <!-- Ajoute d’autres membres -->
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Questions fréquentes</h2>
+    <details>
+      <summary>Comment réserver un voyage ?</summary>
+      <p>Remplissez le formulaire de devis ou contactez-nous par téléphone.</p>
+    </details>
+    <details>
+      <summary>Puis-je personnaliser mon séjour ?</summary>
+      <p>Oui, chaque offre est 100% personnalisable selon vos envies.</p>
+    </details>
+    <!-- Ajoute d’autres questions/réponses -->
+  </section>
+
+  <!-- FORMULAIRE DE CONTACT / DEVIS -->
+  <section id="contact">
+    <h2>Contact & Demande de devis</h2>
+    <form>
+      <label>Nom <input type="text" name="nom" required></label>
+      <label>Email <input type="email" name="email" required></label>
+      <label>Votre demande <textarea name="message" required></textarea></label>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p>Ou contactez-nous au <strong>01 23 45 67 89</strong></p>
+    <div>
+      <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- MENTIONS LEGALES -->
+  <footer>
+    <p>© 2025 Havas Voyage – Site fictif pour projet étudiant. <a href="#mentions">Mentions légales</a> | <a href="#confidentialite">Confidentialité</a></p>
+  </footer>
+</body>
+</html>
